@@ -4,10 +4,11 @@ Rails.application.routes.draw do
     namespace :v1 do
       post :auth, to: "authentication#create"
       resources :locations do
-        resources :recordings
+        #resources :recordings
       end
     end
   end
-
-  resources :locations
+  
+  root to: "locations#index"
+  #resources :locations
 end
